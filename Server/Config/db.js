@@ -12,6 +12,7 @@ Date: November 8, 2021
 Description: Survey web application that has full CRUD functionality using Express, Node.JS, MongoDB and EJS templating engine.
 */
 module.exports = {
-    //"URI": "mongodb://localhost/surveys_list"
-    "URI": "mongodb+srv://ulkar:dJXaoufBtKbD7qJM@mongodbserver.ttslr.mongodb.net/surveys_list?retryWrites=true&w=majority"
-}
+  //"URI": "mongodb://localhost/surveys_list"
+  //"URI": "mongodb+srv://ulkar:dJXaoufBtKbD7qJM@mongodbserver.ttslr.mongodb.net/surveys_list?retryWrites=true&w=majority"
+  URI: "mongodb+srv://piraveenu:I7T3GDfQqclak341@cluster0.aeqcs.mongodb.net/survey_factory?retryWrites=true&w=majority",
+};

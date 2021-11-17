@@ -12,19 +12,26 @@ Date: November 8, 2021
 Description: Survey web application that has full CRUD functionality using Express, Node.JS, MongoDB and EJS templating engine.
 */
 
-let mongoose = require('mongoose');
+let mongoose = require("mongoose");
 
 // create a model class
-let surveyModel = mongoose.Schema({
+let surveyModel = mongoose.Schema(
+  {
     name: String,
     owner: String,
-    surveyId: Number,
-    status: String,
+    _id: mongoose.Types.ObjectId,
+    statusType: {
+      type: String,
+      enum: ["Active", "Inactive"],
+      default: "Inactive",
+    },
     q1: String,
     q2: String,
-    q3: String
-}, {
-    collection: "surveys"
-});
+    q3: String,
+  },
+  {
+    collection: "surveys",
+  }
+);
 
-module.exports = mongoose.model('Survey', surveyModel);
+module.exports = mongoose.model("Survey", surveyModel);

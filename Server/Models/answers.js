@@ -12,11 +12,12 @@ Date: November 8, 2021
 Description: Survey web application that has full CRUD functionality using Express, Node.JS, MongoDB and EJS templating engine.
 */
 
-let mongoose = require('mongoose');
+let mongoose = require("mongoose");
 
 // create a model class
-let answerModel = mongoose.Schema({
-    surveyId: Number,
+let answerModel = mongoose.Schema(
+  {
+    surveyIds: [{ type: Schema.Types.ObjectId, ref: "Survey" }],
     q1ans1: String,
     q1ans2: String,
     q1ans3: String,
@@ -25,9 +26,11 @@ let answerModel = mongoose.Schema({
     q2ans3: String,
     q3ans1: String,
     q3ans2: String,
-    q3ans3: String
-}, {
-    collection: "answers"
-});
+    q3ans3: String,
+  },
+  {
+    collection: "answers",
+  }
+);
 
-module.exports = mongoose.model('answers', answerModel);
+module.exports = mongoose.model("answers", answerModel);
