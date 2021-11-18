@@ -19,6 +19,13 @@ let mongoose = require("mongoose");
 // connect to the Survey Model
 let surveyController = require("../Controllers/survey");
 
+function requireAuth(req, res, next) {
+  if (!req.isAuthenticated()) {
+    return res.redirect("/login");
+  }
+  next();
+}
+
 /* GET Route for the Survey List page - READ Operation */
 router.get("/", surveyController.displaySurveyList);
 
@@ -35,12 +42,12 @@ router.get("/respond/:id", surveyController.displayRespondPage);
 router.post("/respond/:id", surveyController.processRespondPage);
 
 /* GET Route for displaying the Edit page - UPDATE Operation */
-router.get("/edit/:id", surveyController.displayEditPage);
+router.get("/edit/:id", requireAuth, surveyController.displayEditPage);
 
 /* POST Route for processing the Edit page - UPDATE Operation */
-router.post("/edit/:id", surveyController.processEditPage);
+router.post("/edit/:id", requireAuth, surveyController.processEditPage);
 
 /* GET to perform Deletion - DELETE Operation */
-router.get("/delete/:id", surveyController.performDeletion);
+router.get("/delete/:id", requireAuth, surveyController.performDeletion);
 
 module.exports = router;

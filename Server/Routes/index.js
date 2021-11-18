@@ -23,4 +23,16 @@ router.get("/", indexController.displayHomePage);
 /* GET Home page. */
 router.get("/Home", indexController.displayHomePage);
 
+/* GET Route for displaying the Login Page */
+router.get("/login", indexController.displayLoginPage);
+
+/* POST Route for processing the Login Page */
+router.post("/login", indexController.processingLoginPage);
+
+/* GET Route for displaying the Register Page */
+router.get("/register", indexController.displayRegisterPage);
+
+/* POST Route for processing the Register Page */
+router.post("/register", indexController.processingRegisterPage);
+
 module.exports = router;

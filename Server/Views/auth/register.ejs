@@ -4,8 +4,8 @@
 <main class="container">
   <!-- Message Area -->
 
-  <% if(message.length > 0) {%>
-  <div class="alert alert-danger"><%message %></div>
+  <% if(messages.length > 0) {%>
+  <div class="alert alert-danger"><%messages %></div>
   <% } %>
 
   <div class="row">
@@ -49,13 +49,13 @@
         </fieldset>
         
         <fieldset class="form-group">
-          <label for="email">Email: </label>
+          <label for="displayName">Display Name: </label>
           <input
-            type="email"
+            type="text"
             class="form-control"
-            name="email"
-            placeholder="Enter email"
-            id="email"
+            name="displayName"
+            placeholder="Enter Display Name"
+            id="displayName"
             required>
         </fieldset>
 
