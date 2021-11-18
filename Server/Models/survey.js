@@ -19,8 +19,8 @@ let surveyModel = mongoose.Schema(
   {
     name: String,
     owner: String,
-    _id: mongoose.Types.ObjectId,
-    statusType: {
+    surveyId: mongoose.Types.ObjectId,
+    status: {
       type: String,
       enum: ["Active", "Inactive"],
       default: "Inactive",

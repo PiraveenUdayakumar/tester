@@ -17,16 +17,12 @@ let mongoose = require("mongoose");
 // create a model class
 let answerModel = mongoose.Schema(
   {
-    surveyIds: [{ type: Schema.Types.ObjectId, ref: "Survey" }],
-    q1ans1: String,
-    q1ans2: String,
-    q1ans3: String,
-    q2ans1: String,
-    q2ans2: String,
-    q2ans3: String,
-    q3ans1: String,
-    q3ans2: String,
-    q3ans3: String,
+    surveyId: { type: Schema.Types.ObjectId, ref: "Survey" },
+    q1ans: String,
+    q2ans: String,
+    q3ans: String,
+    q4ans: String,
+    q5ans: String,
   },
   {
     collection: "answers",

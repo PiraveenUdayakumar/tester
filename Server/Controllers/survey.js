@@ -65,7 +65,7 @@ module.exports.displayRespondPage = (req, res, next) => {
       console.log(err);
       res.end(err);
     } else {
-      // show the edit page
+      // show the respond page
       res.render("contents/respond", {
         title: "Take Survey",
         survey: surveyToRespond,
